@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import {GlobalStyle} from './style.js';
+import React, { Component } from 'react'
+import Header from './common/header'
+import { GlobalStyle } from './style.js'
+import { GlobalIconStyle } from './statics/iconfont/iconfont'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
         <GlobalStyle />
-        hello world
-      </div>
-    );
+        <GlobalIconStyle />
+        <Header />
+      </React.Fragment>
+    )
   }
 }
 
-export default App;
+export default App
