@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Header from './common/header'
+import store from './store'
+import { Provider } from 'react-redux'
 import { GlobalStyle } from './style.js'
 import { GlobalIconStyle } from './statics/iconfont/iconfont'
 
@@ -9,7 +11,9 @@ class App extends Component {
       <React.Fragment>
         <GlobalStyle />
         <GlobalIconStyle />
-        <Header />
+        <Provider store={store}>
+          <Header />
+        </Provider>
       </React.Fragment>
     )
   }
