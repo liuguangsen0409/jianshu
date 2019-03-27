@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
+import { actionCreators } from './store'
 import { HeaderWrapper, Logo, Nav, NavItem, SearchWrapper, NavSearch, Addition, Button } from './style'
 
 // header 变成无状态组件 性能提升比较高
@@ -36,24 +37,18 @@ const Header = (props) => {
 // 把 store 里面的 focused 映射到 组件的 props 中
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    focused: state.header.focused
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus () {
-      const action = {
-        type: 'search_focus'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchFocus())
     },
 
     handleInputBlur () {
-      const action = {
-        type: 'search_blur'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchBlur())
     }
   }
 }
