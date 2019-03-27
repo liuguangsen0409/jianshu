@@ -37,7 +37,7 @@ const Header = (props) => {
 // 把 store 里面的 focused 映射到 组件的 props 中
 const mapStateToProps = (state) => {
   return {
-    focused: state.header.focused
+    focused: state.getIn(['header', 'focused'])
   }
 }
 
