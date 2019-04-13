@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { DetailWrapper, Header, Content } from './style'
 import { actionCreators } from './store'
 
-class Detail extends Component {
+class Detail extends PureComponent {
   componentDidMount () {
-    this.props.getDetail()
+    this.props.getDetail(this.props.match.params.id)
   }
 
   render () {
@@ -26,8 +26,8 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-  getDetail () {
-    dispatch(actionCreators.getDetail())
+  getDetail (id) {
+    dispatch(actionCreators.getDetail(id))
   }
 })
 

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { GlobalStyle } from './style.js'
 import { GlobalIconStyle } from './statics/iconfont/iconfont'
 import Home from './pages/home'
+import Login from './pages/login'
 import Detail from './pages/detail'
 
 class App extends Component {
@@ -18,7 +19,8 @@ class App extends Component {
           <BrowserRouter>
             <Header />
             <Route path='/' exact component={ Home } ></Route>
-            <Route path='/detail' exact component={ Detail } ></Route>
+            <Route path='/login' exact component={ Login } ></Route>
+            <Route path='/detail/:id' exact component={ Detail } ></Route>
           </BrowserRouter>
         </Provider>
       </React.Fragment>
