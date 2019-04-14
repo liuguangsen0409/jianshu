@@ -9,7 +9,7 @@ import { HeaderWrapper, Logo, Nav, NavItem, SearchWrapper, NavSearch, Addition, 
 class Header extends Component {
 
   getListArea = () => {
-    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage, logout } = this.props
+    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props
     const newList = list.toJS()
     const pageList = []
 
@@ -64,10 +64,12 @@ class Header extends Component {
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className='writting'>
-            <i className="iconfont">&#xe615;</i>
-            写文章
-          </Button>
+          <Link to='/write'>
+            <Button className='writting'>
+              <i className="iconfont">&#xe615;</i>
+              写文章
+            </Button>
+          </Link>
           <Button className='reg'>注册</Button>
         </Addition>
       </HeaderWrapper>
